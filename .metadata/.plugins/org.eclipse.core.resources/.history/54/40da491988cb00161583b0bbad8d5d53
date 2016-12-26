@@ -1,0 +1,64 @@
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+////     //////    //              //                //    //              ///
+////      /////    //    //////    //                //    //    //////    ///
+////        ///    //    //////    ////////    ////////    //    //////    ///
+////    /    //    //    //////    ////////    ////////    //    //////    ///
+////    //    /    //    //////    ////////    ////////    //    //////    ///
+////    ///        //    //////    ////////    ////////    //    //////    ///
+////    ////       //    //////    ////////    ////////    //    //////    ///
+////    /////      //    //////    ////////    ////////    //    //////    ///
+////    //////     //              ////////    ////////    //              ///
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////
+//  HOUTEN, HERO & SCART CIA.                                               //
+//  MICROCONTROLLING AND AUTOMATION DIVISION                                //
+//  ENGINEERING RESEARCH AND DEVELOPMENT DEPARTMENT                         //
+//                                                                          //
+//  Program:    domotics                                                    //
+//  Goal:       Create a full domotics application                          //
+//  Manager:                                                                //
+//  Charge:                                                                 //
+//  Programmers                                                             //
+//  List:       Moreno Calderón Jose Luis, Manager                          //
+//              Ramirez Rosero Yosef Esteban, Manager                       //
+//  List:       Toquica Cáceres Hans Milos, Manager                         //
+//  Revision                                                                //
+//  List:       Sat 09-10-16 17:07: (Version 0.0) Project was created       //
+//  Current                                                                 //
+//  Version:    V0.0(Null)                                                  //
+//////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////
+//  Variables list:                                                         //
+//  ''''''''' '''''                                                         //
+//                                                                          //
+//////////////////////////////////////////////////////////////////////////////
+//                                                                          //
+//  LET THE PROGRAMMING BEGIN                                               //
+//                                                                          //
+//////////////////////////////////////////////////////////////////////////////
+
+
+#include <hidef.h> /* for EnableInterrupts macro */
+#include "derivative.h" /* include peripheral declarations */
+#include "main_asm.h" /* interface to the assembly module */
+
+
+
+
+void main(void) {
+  EnableInterrupts;
+  /* include your code here */
+
+  asm_main();		/* call the assembly function */
+
+  for(;;) {
+    __RESET_WATCHDOG();	/* feeds the dog */
+  } /* loop forever */
+  /* please make sure that you never leave main */
+}
