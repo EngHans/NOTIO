@@ -19,15 +19,13 @@
 //  AUTOMATION DEPARTMENT                                                   //
 //                                                                          //
 //  Program:    Power Consumption                                           //
-//  Goal:       Create a full domotics application                          //
-//  Manager:                                                                //
-//  Charge:                                                                 //
+//  Goal:       Find out consumption of MCU under different firmware        //
+//  Manager:    Toquica Cáceres, Hans Milos                                 //
+//  Charge:     Mechatronics Student                                        //
 //  Programmers                                                             //
-//  List:       Moreno Calderón Jose Luis, Manager                          //
-//              Ramirez Rosero Yosef Esteban, Manager                       //
 //  List:       Toquica Cáceres Hans Milos, Manager                         //
 //  Revision                                                                //
-//  List:       Sat 09-10-16 17:07: (Version 0.0) Project was created       //
+//  List:       Mon 12-26-16 11:28: (Version 0.0) Project was created       //
 //  Current                                                                 //
 //  Version:    V0.0(Null)                                                  //
 //////////////////////////////////////////////////////////////////////////////
@@ -42,22 +40,17 @@
 //                                                                          //
 //////////////////////////////////////////////////////////////////////////////
 
-
-#include <hidef.h> /* for EnableInterrupts macro */
-#include "derivative.h" /* include peripheral declarations */
-#include "main_asm.h" /* interface to the assembly module */
-
-
-
+#include "derivative.h"
+#include "aw60config.h"
+#include "functions.h"
 
 void main(void) {
-  EnableInterrupts;
-  /* include your code here */
-
-  asm_main();		/* call the assembly function */
-
+	startMicro();
+    
   for(;;) {
-    __RESET_WATCHDOG();	/* feeds the dog */
+    PTDD_PTDD0 = 1;
+    delay(50,255);
+    PTDD_PTDD0 = 0;
+    delay(50,255);
   } /* loop forever */
-  /* please make sure that you never leave main */
 }
