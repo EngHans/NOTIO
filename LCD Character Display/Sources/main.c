@@ -58,14 +58,16 @@ void main(void) {
 
 	startLCD();
 	
-	printStringLCD("Jonathan Murc");
+	printStringLCD("NOTIO Ingenier");
 	
 	customCharacterLCD(0x00, 0x07, 0x00, 0x0C, 0x04, 0x04, 0x04, 0x0E, 0x00);
 	printLCD(0);
 	printLCD('a');
-	delay(255,255);
 		
     for(;;) {
-        	
+    	delay(255,255);
+        LCD_A = 0;
+    	delay(255,255);
+    	LCD_A = 1;
     } /* loop forever */
 }

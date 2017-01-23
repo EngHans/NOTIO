@@ -1,3 +1,31 @@
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+////     //////    //              //                //    //              ///
+////      /////    //    //////    //                //    //    //////    ///
+////        ///    //    //////    ////////    ////////    //    //////    ///
+////    /    //    //    //////    ////////    ////////    //    //////    ///
+////    //    /    //    //////    ////////    ////////    //    //////    ///
+////    ///        //    //////    ////////    ////////    //    //////    ///
+////    ////       //    //////    ////////    ////////    //    //////    ///
+////    /////      //    //////    ////////    ////////    //    //////    ///
+////    //////     //              ////////    ////////    //              ///
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////
+//                                                                          //
+//  USAGE INSTRUCTIONS                                                      //
+//                                                                          //
+//  In order to use the LMM83T064D3 library (most likely header file) the   //
+//  user needs to replace the pin connections in the define macros with the //
+//  actual ones (i.e. the physical connections on the µCU) also the data    //
+//  direction bits of the physical configuration as well.                   //
+//                                                                          //
+//////////////////////////////////////////////////////////////////////////////
+
+
 /*
  * lmm83t064d3.h
  *
@@ -76,7 +104,7 @@ void customCharacterLCD(char address, char rowOne, char rowTwo, char rowThree, c
 void printStringLCD(char str[]); // Print a string to current LCD address
 void goToFirstRowLCD(void);     // Go to first LCD screen row
 void goToSecondRowLCD(void);    // Go to second LCD screen row
-
+void clearDisplayLCD(void);     // Clear display
 
 
 void enableLCD(){
@@ -219,6 +247,10 @@ void goToFirstRowLCD(void){
 
 void goToSecondRowLCD(void){
     configLCD(0b11000000);
+}
+
+void clearDisplayLCD(){
+	configLCD(0b00000001);
 }
 
 #endif /* LMM83T064D3_H_ */

@@ -1,5 +1,4 @@
 
-
 Sources/main_c.obj: \
 	C:/Users/toquica/workspace/GIT/NOTIO/LCD\ Character\ Display/Project_Headers/../Sources/main.c \
 	C:/Freescale/CW\ MCU\ v10.6/MCU/lib/hc08c/include/hidef.h \
